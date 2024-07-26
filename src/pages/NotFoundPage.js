@@ -5,7 +5,7 @@ const NotFoundPage = () => {
     <>
       없는 페이지입니다.
       <Link to="/main">
-        <button>main으로 가기 !</button>
+        <button>main으로 가기!</button>
       </Link>
     </>
   );
