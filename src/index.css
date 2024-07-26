@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "kodakku";
+  src: url("./styles/fonts/kodakku.ttf");
+}
+
+@font-face {
+  font-family: "PT-Black";
+  src: url("./styles/fonts/Pretendard-Black.woff2");
+}
+
+@font-face {
+  font-family: "PT-Bold";
+  src: url("./styles/fonts/Pretendard-Bold.woff2");
+}
+
+@font-face {
+  font-family: "PT-ExtraBold";
+  src: url("./styles/fonts/Pretendard-ExtraBold.woff2");
+}
+
+@font-face {
+  font-family: "PT-ExtraLight";
+  src: url("./styles/fonts/Pretendard-ExtraLight.woff2");
+}
+
+@font-face {
+  font-family: "PT-Light";
+  src: url("./styles/fonts/Pretendard-Light.woff2");
+}
+
+@font-face {
+  font-family: "PT-Medium";
+  src: url("./styles/fonts/Pretendard-Medium.woff2");
+}
+
+@font-face {
+  font-family: "PT-Regular";
+  src: url("./styles/fonts/Pretendard-Regular.woff2");
+}
+
+@font-face {
+  font-family: "PT-SemiBold";
+  src: url("./styles/fonts/Pretendard-SemiBold.woff2");
+}
+
+@font-face {
+  font-family: "PT-Thin";
+  src: url("./styles/fonts/Pretendard-Thin.woff2");
+}
