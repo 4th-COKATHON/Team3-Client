@@ -20,6 +20,11 @@ import star5 from "./../../assets/Main/Star5.svg";
 import sunny from "./../../assets/Main/Sunny.svg";
 import flower from "./../../assets/Main/Flower.svg";
 import plus from "./../../assets/Main/plus.svg";
+import film from "./../../assets/Main/Film.svg";
+import cloudfilm from "./../../assets/Main/CloudFilm.svg";
+import sunfilm from "./../../assets/Main/SunFilm.svg";
+import rainfilm from "./../../assets/Main/RainFilm.svg";
+import snowfilm from "./../../assets/Main/SnowFilm.svg";
 
 const Main = () => {
   return (
@@ -64,10 +69,20 @@ const Main = () => {
             <img className="allImg" src={star3} alt="star3" />
           </Section>
           <Section>
+            <img src={film} alt="film" />
+            <img src={film} alt="film" />
+            <img src={film} alt="film" />
+            <img src={film} alt="film" />
+            <img src={film} alt="film" />
+            <img src={film} alt="film" />
             <div className="date"></div>
             <img className="dateImg" src={star4} alt="star4" />
           </Section>
           <Section>
+            <img src={cloudfilm} alt="cloudfilm" />
+            <img src={sunfilm} alt="sunfilm" />
+            <img src={rainfilm} alt="rainfilm" />
+            <img src={snowfilm} alt="snowfilm" />
             <div className="weather"></div>
             <img className="weatherImg" src={star5} alt="star5" />
           </Section>

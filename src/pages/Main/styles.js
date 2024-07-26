@@ -137,6 +137,10 @@ export const Section = styled.section`
   display: flex;
   position: relative;
 
+  img {
+    cursor: pointer;
+  }
+
   .all {
     position: absolute;
     bottom: 0px;
