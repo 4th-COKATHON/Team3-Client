@@ -5,14 +5,21 @@ import {
   InfoCard,
   MainContainer,
   MainLayout,
+  NewReel,
   ProfileImg,
   ProfileName,
   Reel,
+  ReelsWrapper,
+  Section,
 } from "./styles";
 import star1 from "./../../assets/Main/Star1.svg";
 import star2 from "./../../assets/Main/Star2.svg";
+import star3 from "./../../assets/Main/Star3.svg";
+import star4 from "./../../assets/Main/Star4.svg";
+import star5 from "./../../assets/Main/Star5.svg";
 import sunny from "./../../assets/Main/Sunny.svg";
 import flower from "./../../assets/Main/Flower.svg";
+import plus from "./../../assets/Main/plus.svg";
 
 const Main = () => {
   return (
@@ -46,7 +53,25 @@ const Main = () => {
             </InfoCard>
           </Info>
         </Card>
-        <div></div>
+        <ReelsWrapper>
+          <Section>
+            <NewReel>
+              <span>새로운 REEL</span>
+              <span>만들기</span>
+              <img src={plus} alt="plus" />
+            </NewReel>
+            <div className="all"></div>
+            <img className="allImg" src={star3} alt="star3" />
+          </Section>
+          <Section>
+            <div className="date"></div>
+            <img className="dateImg" src={star4} alt="star4" />
+          </Section>
+          <Section>
+            <div className="weather"></div>
+            <img className="weatherImg" src={star5} alt="star5" />
+          </Section>
+        </ReelsWrapper>
       </MainContainer>
     </MainLayout>
   );
