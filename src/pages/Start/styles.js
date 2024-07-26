@@ -87,6 +87,10 @@ export const StartBtn = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  &:hover {
+    background-color: #ffd56a;
+    transition: background-color 0.1s;
+  }
 
   span {
     font-family: "PT-Bold";

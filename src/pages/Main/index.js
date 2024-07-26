@@ -25,8 +25,11 @@ import cloudfilm from "./../../assets/Main/CloudFilm.svg";
 import sunfilm from "./../../assets/Main/SunFilm.svg";
 import rainfilm from "./../../assets/Main/RainFilm.svg";
 import snowfilm from "./../../assets/Main/SnowFilm.svg";
+import { useNavigate } from "react-router";
 
 const Main = () => {
+  const nav = useNavigate();
+
   return (
     <MainLayout>
       <MainContainer>
@@ -60,7 +63,7 @@ const Main = () => {
         </Card>
         <ReelsWrapper>
           <Section>
-            <NewReel>
+            <NewReel onClick={() => nav("/new")}>
               <span>새로운 REEL</span>
               <span>만들기</span>
               <img src={plus} alt="plus" />
