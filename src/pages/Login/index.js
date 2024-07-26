@@ -1,5 +1,5 @@
 const Login = () => {
-  return <>Login페이지입니다. - 시작페이지</>;
+  return <>Login페이지입니다.</>;
 };
 
 export default Login;
