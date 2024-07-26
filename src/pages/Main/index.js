@@ -43,12 +43,12 @@ const Main = () => {
           <Info>
             <InfoCard>
               <p>오늘의 날씨</p>
-              <img src={sunny} />
+              <img src={sunny} alt="sunny" />
               <span>맑음</span>
             </InfoCard>
             <InfoCard>
               <p>이달의 꽃</p>
-              <img src={flower} />
+              <img src={flower} alt="flower" />
               <span>수국</span>
             </InfoCard>
           </Info>
