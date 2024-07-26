@@ -104,7 +104,7 @@ export const InfoCard = styled.div`
 
   p {
     margin-top: 15.22px;
-    font-family: "PT-Extrabold";
+    font-family: "PT-Semibold";
     font-size: 29px;
     line-height: normal;
   }
@@ -193,7 +193,7 @@ export const NewReel = styled.div`
   cursor: pointer;
 
   span {
-    font-family: "PT-Bold";
+    font-family: "PT-SemiBold";
     font-size: 24px;
     color: white;
     line-height: 1.53;
