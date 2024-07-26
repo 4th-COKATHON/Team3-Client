@@ -152,7 +152,7 @@ export const DateMain = () => {
         <InputPhoto>
           <InputPhotoText1>REEL에 넣을</InputPhotoText1>{" "}
           <InputPhotoText1>사진을 선택해주세요</InputPhotoText1>
-          <InputPhotoText2>(최대 nn장)</InputPhotoText2>
+          <InputPhotoText2>(최대 10장)</InputPhotoText2>
           <InputPhotoText3>
             <ImageUpload />
           </InputPhotoText3>
@@ -189,8 +189,10 @@ export const WeatherMain = () => {
         <InputPhoto>
           <InputPhotoText1>REEL에 넣을</InputPhotoText1>{" "}
           <InputPhotoText1>사진을 선택해주세요</InputPhotoText1>
-          <InputPhotoText2>(최대 nn장)</InputPhotoText2>
-          <InputPhotoText3>이미지 파일 업로드</InputPhotoText3>
+          <InputPhotoText2>(최대 10장)</InputPhotoText2>
+          <InputPhotoText3>
+            <ImageUpload />
+          </InputPhotoText3>
         </InputPhoto>
       </Warpper>
     </Container>
@@ -206,8 +208,10 @@ export const AlwaysMain = () => {
         <InputPhoto>
           <InputPhotoText1>REEL에 넣을</InputPhotoText1>{" "}
           <InputPhotoText1>사진을 선택해주세요</InputPhotoText1>
-          <InputPhotoText2>(최대 nn장)</InputPhotoText2>
-          <InputPhotoText3>이미지 파일 업로드</InputPhotoText3>
+          <InputPhotoText2>(최대 10장)</InputPhotoText2>
+          <InputPhotoText3>
+            <ImageUpload />
+          </InputPhotoText3>
         </InputPhoto>
       </AlwaysMainWarpper>
     </Container>
