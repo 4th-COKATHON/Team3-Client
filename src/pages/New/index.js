@@ -18,21 +18,24 @@ const New = () => {
     const [always,setAlways]=useState(false);
 
     const handleDateClick = () => {
-        setDate(!date);
+      if(!date){
+        setDate(!date);}
         setWeather(false);
         setAlways(false);
       };
     
       const handleWeatherClick = () => {
         setDate(false);
-        setWeather(!weather);
+        if(!weather){
+        setWeather(!weather);}
         setAlways(false);
       };
     
       const handleAlwaysClick = () => {
         setDate(false);
         setWeather(false);
-        setAlways(!always);
+        if(!always){
+        setAlways(!always);}
       };
     return (
         <BaseContainer>
