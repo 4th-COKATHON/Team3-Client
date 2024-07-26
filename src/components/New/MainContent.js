@@ -4,6 +4,7 @@ import { ReactComponent as Sun } from "../../assets/New/Sun.svg";
 import { ReactComponent as Blur } from "../../assets/New/Blur.svg";
 import { ReactComponent as Rain } from "../../assets/New/Rain.svg";
 import { ReactComponent as Snow } from "../../assets/New/Snow.svg";
+import { CalenderContainer, CalendarCore } from "./Calendar";
 import { ImageUpload } from "./ImageUpload";
 
 const Container = styled.div`
@@ -72,13 +73,15 @@ const Title = styled.div`
   text-align: left;
   width: 357px;
 `;
+
 const Calendar = styled.div`
   border-radius: 18.311px;
   background: #f5f5f5;
   width: 357px;
   height: 353px;
 `;
-const Warpper = styled.div`
+
+const Wrapper = styled.div`
   margin: 56px;
   border-radius: 18.311px;
   display: flex;
@@ -100,7 +103,7 @@ const InputPhotoTitle = styled.div`
   font-family: "PT-Bold";
 `;
 
-const WeatherWapper = styled.div`
+const WeatherWrapper = styled.div`
   border-radius: 18.311px;
   width: 357px;
   height: 353px;
@@ -133,7 +136,7 @@ const WeatherInnerContainer = styled.div`
   background-color: ${(props) => (props.selected ? "#ffffff" : "transparent")};
 `;
 
-const AlwaysMainWarpper = styled.div`
+const AlwaysMainWrapper = styled.div`
   margin: 0 auto;
   margin-top: 67px;
   display: flex;
@@ -148,15 +151,6 @@ const CalendarWrapper = styled.div`
   height: 353px;
 `;
 
-const Wrapper = styled.div`
-  margin: 56px;
-  border-radius: 18.311px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 export const WeatherMain = () => {
   const [selectedWeather, setSelectedWeather] = useState("sun");
 
@@ -165,9 +159,10 @@ export const WeatherMain = () => {
   };
   return (
     <Container>
-      <Warpper>
+      <Wrapper>
         <Title>WEATHER REEL</Title>
-        <WeatherWapper>
+
+        <WeatherWrapper>
           <WeatherInnerContainer
             selected={selectedWeather === "sun"}
             onClick={() => handleWeatherClick("sun")}
@@ -194,10 +189,21 @@ export const WeatherMain = () => {
           >
             <Snow />눈
           </WeatherInnerContainer>
-        </WeatherWapper>
-      </Warpper>
-      <Warpper>
-        <InputPhotoTitle>"비"</InputPhotoTitle>
+        </WeatherWrapper>
+      </Wrapper>
+      <Wrapper>
+        <InputPhotoTitle>
+          "
+          {selectedWeather === "sun"
+            ? "맑음"
+            : selectedWeather === "blur"
+              ? "흐림"
+              : selectedWeather === "rain"
+                ? "비"
+                : "눈"}
+          "
+        </InputPhotoTitle>
+
         <InputPhoto>
           <InputPhotoText1>REEL에 넣을</InputPhotoText1>{" "}
           <InputPhotoText1>사진을 선택해주세요</InputPhotoText1>
@@ -206,20 +212,34 @@ export const WeatherMain = () => {
             <ImageUpload />
           </InputPhotoText3>
         </InputPhoto>
-      </Warpper>
+      </Wrapper>
     </Container>
   );
 };
 
 export const DateMain = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
+  const formattedDate = `${selectedDate.getFullYear()}년 ${
+    selectedDate.getMonth() + 1
+  }월 ${selectedDate.getDate()}일`;
+
   return (
     <Container>
       <Wrapper>
         <Title>DATE REEL</Title>
-        <CalendarWrapper>아무튼 캘린더임</CalendarWrapper>
+
+        <CalendarWrapper>
+          <Schedule onDateChange={handleDateChange} />
+        </CalendarWrapper>
       </Wrapper>
       <Wrapper>
-        <InputPhotoTitle>2024년 7월 27일</InputPhotoTitle>
+        <InputPhotoTitle>{formattedDate}</InputPhotoTitle>
+
         <InputPhoto>
           <InputPhotoText1>REEL에 넣을</InputPhotoText1>
           <InputPhotoText1>사진을 선택해주세요</InputPhotoText1>
@@ -236,8 +256,8 @@ export const DateMain = () => {
 export const AlwaysMain = () => {
   return (
     <Container>
-      <AlwaysMainWarpper>
-        <Title>ALWAYSS REEL</Title>
+      <AlwaysMainWrapper>
+        <Title>ALWAYS REEL</Title>
 
         <InputPhoto>
           <InputPhotoText1>REEL에 넣을</InputPhotoText1>{" "}
@@ -247,7 +267,7 @@ export const AlwaysMain = () => {
             <ImageUpload />
           </InputPhotoText3>
         </InputPhoto>
-      </AlwaysMainWarpper>
+      </AlwaysMainWrapper>
     </Container>
   );
 };
@@ -257,3 +277,34 @@ const MainContent = () => {
 };
 
 export default MainContent;
+
+const Schedule = ({ onDateChange }) => {
+  const [date, setDate] = useState(new Date());
+
+  const handleChange = (newDate) => {
+    setDate(newDate);
+    onDateChange(newDate);
+  };
+
+  const formatShortWeekday = (locale, date) => {
+    const weekdays = ["S", "M", "T", "W", "T", "F", "S"];
+    return weekdays[date.getDay()];
+  };
+
+  const onClickDay = (value) => {
+    handleChange(value);
+  };
+
+  return (
+    <CalenderContainer>
+      <CalendarCore
+        value={date}
+        onChange={handleChange}
+        onClickDay={onClickDay}
+        formatDay={(locale, date) => date.getDate()}
+        navigationLabel={({ date, view }) => `${date.getMonth() + 1}월`}
+        formatShortWeekday={formatShortWeekday}
+      />
+    </CalenderContainer>
+  );
+};
