@@ -5,7 +5,6 @@ import Login from "./pages/Login/index.js";
 import Main from "./pages/Main/index.js";
 import Start from "./pages/Start/index.js";
 
-
 function App() {
   return (
     <div>
