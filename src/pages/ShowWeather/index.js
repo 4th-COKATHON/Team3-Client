@@ -9,7 +9,6 @@ import cloudfilm from "./../../assets/ShowWeather/CloudFilm.svg";
 import sunfilm from "./../../assets/ShowWeather/SunFilm.svg";
 import rainfilm from "./../../assets/ShowWeather/RainFilm.svg";
 import snowfilm from "./../../assets/ShowWeather/SnowFilm.svg";
-import newjeans5 from "./../../assets/ShowWeather/newjeans5.avif";
 import {
   DateBox,
   ImgCard,
@@ -33,7 +32,6 @@ const ShowWeather = () => {
         </DateBox>
         <ImgWrapper>
           <ImgCard>
-            <img src={newjeans5} alt="newjeans5" />
           </ImgCard>
           <ImgCard></ImgCard>
           <ImgCard></ImgCard>
