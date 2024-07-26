@@ -6,7 +6,11 @@ export const StartLayout = styled.div`
   background-color: #242321;
   color: white;
   position: relative;
-  
+  overflow: hidden;
+
+  span {
+  }
+  .film,
   .star1,
   .star2,
   .star3,
@@ -15,6 +19,12 @@ export const StartLayout = styled.div`
     position: absolute;
   }
 
+  .film {
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   .star1 {
     left: 184px;
   }
@@ -40,6 +50,7 @@ export const StartLayout = styled.div`
 `;
 
 export const Logo = styled.div`
+  z-index: 100;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -48,21 +59,25 @@ export const Logo = styled.div`
   align-items: center;
 
   section {
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   img {
+    z-index: 100;
     margin-right: 20px;
   }
 
   span {
+    z-index: 100;
     font-family: "kodakku";
     font-size: 144px;
   }
 `;
 
 export const StartBtn = styled.div`
+  z-index: 100;
   margin-top: 47px;
   width: 214px;
   height: 66px;

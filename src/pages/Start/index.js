@@ -5,6 +5,7 @@ import star3 from "./../../assets/Start/Star3.svg";
 import star4 from "./../../assets/Start/Star4.svg";
 import star5 from "./../../assets/Start/Star5.svg";
 import logo from "./../../assets/Start/Logo.svg";
+import film from "./../../assets/Start/Film.svg";
 import { useNavigate } from "react-router";
 
 const Start = () => {
@@ -13,6 +14,7 @@ const Start = () => {
   return (
     <StartLayout>
       <div>
+        <img className="film" src={film} alt="film" />
         <img className="star1" src={star1} alt="star1" />
         <img className="star2" src={star2} alt="star2" />
         <img className="star3" src={star3} alt="star3" />
