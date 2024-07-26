@@ -35,7 +35,7 @@ const Confirm = () => {
   return (
     <ConfirmWrapper>
       <ConfirmButton onClick={() => nav(-1)}>취소</ConfirmButton>
-      <ConfirmButton>완료하기</ConfirmButton>
+      <ConfirmButton onClick={() => nav("/main")}>완료하기</ConfirmButton>
     </ConfirmWrapper>
   );
 };
