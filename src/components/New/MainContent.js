@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Sun } from "../../assets/New/Sun.svg";
 import { ReactComponent as Blur } from "../../assets/New/Blur.svg";
 import { ReactComponent as Rain } from "../../assets/New/Rain.svg";
@@ -39,7 +39,6 @@ const InputPhotoText1 = styled.div`
 const InputPhotoText2 = styled.div`
   color: #242321;
   text-align: center;
-  font-family: Pretendard;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -115,6 +114,7 @@ const WeatherWapper = styled.div`
 const WeatherInnerContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex-direction: column;
   width: 165px;
   height: 165px;
   align-items: center;
@@ -125,11 +125,12 @@ const WeatherInnerContainer = styled.div`
   color: #767067;
   text-align: center;
   font-family: "PT-Regular";
-
   font-size: 31.167px;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.935px;
+  cursor: pointer;
+  background-color: ${(props) => (props.selected ? "#ffffff" : "transparent")};
 `;
 
 const AlwaysMainWarpper = styled.div`
@@ -140,46 +141,57 @@ const AlwaysMainWarpper = styled.div`
   gap: 40px;
 `;
 
-export const DateMain = () => {
-  return (
-    <Container>
-      <Warpper>
-        <Title>DATE REEL</Title>
-        <Calendar>아무튼 캘린더임</Calendar>
-      </Warpper>
-      <Warpper>
-        <InputPhotoTitle>2024년 7월 27일</InputPhotoTitle>
-        <InputPhoto>
-          <InputPhotoText1>REEL에 넣을</InputPhotoText1>{" "}
-          <InputPhotoText1>사진을 선택해주세요</InputPhotoText1>
-          <InputPhotoText2>(최대 10장)</InputPhotoText2>
-          <InputPhotoText3>
-            <ImageUpload />
-          </InputPhotoText3>
-        </InputPhoto>
-      </Warpper>
-    </Container>
-  );
-};
+const CalendarWrapper = styled.div`
+  border-radius: 18.311px;
+  background: #f5f5f5;
+  width: 357px;
+  height: 353px;
+`;
+
+const Wrapper = styled.div`
+  margin: 56px;
+  border-radius: 18.311px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export const WeatherMain = () => {
+  const [selectedWeather, setSelectedWeather] = useState("sun");
+
+  const handleWeatherClick = (weather) => {
+    setSelectedWeather(weather);
+  };
   return (
     <Container>
       <Warpper>
         <Title>WEATHER REEL</Title>
         <WeatherWapper>
-          <WeatherInnerContainer>
+          <WeatherInnerContainer
+            selected={selectedWeather === "sun"}
+            onClick={() => handleWeatherClick("sun")}
+          >
             <Sun />
             맑음
           </WeatherInnerContainer>
-          <WeatherInnerContainer>
+          <WeatherInnerContainer
+            selected={selectedWeather === "blur"}
+            onClick={() => handleWeatherClick("blur")}
+          >
             <Blur />
             흐림
           </WeatherInnerContainer>
-          <WeatherInnerContainer>
+          <WeatherInnerContainer
+            selected={selectedWeather === "rain"}
+            onClick={() => handleWeatherClick("rain")}
+          >
             <Rain />비
           </WeatherInnerContainer>
-          <WeatherInnerContainer>
+          <WeatherInnerContainer
+            selected={selectedWeather === "snow"}
+            onClick={() => handleWeatherClick("snow")}
+          >
             <Snow />눈
           </WeatherInnerContainer>
         </WeatherWapper>
@@ -195,6 +207,28 @@ export const WeatherMain = () => {
           </InputPhotoText3>
         </InputPhoto>
       </Warpper>
+    </Container>
+  );
+};
+
+export const DateMain = () => {
+  return (
+    <Container>
+      <Wrapper>
+        <Title>DATE REEL</Title>
+        <CalendarWrapper>아무튼 캘린더임</CalendarWrapper>
+      </Wrapper>
+      <Wrapper>
+        <InputPhotoTitle>2024년 7월 27일</InputPhotoTitle>
+        <InputPhoto>
+          <InputPhotoText1>REEL에 넣을</InputPhotoText1>
+          <InputPhotoText1>사진을 선택해주세요</InputPhotoText1>
+          <InputPhotoText2>(최대 10장)</InputPhotoText2>
+          <InputPhotoText3>
+            <ImageUpload />
+          </InputPhotoText3>
+        </InputPhoto>
+      </Wrapper>
     </Container>
   );
 };
