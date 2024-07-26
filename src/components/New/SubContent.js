@@ -16,10 +16,21 @@ box-sizing:border-box;
 border: 2px solid #FFF;
 background: #FFC303;
 `
+
+const AddContainer=styled.div`
+display: flex;
+width: 200px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+align-self: stretch;
+border-radius: 28px;
+border: 3px dashed #242321;
+`
 const SubContent = () => {
     return (
         <Container>
-            
+            <AddContainer/>
         </Container>
     );
 };
