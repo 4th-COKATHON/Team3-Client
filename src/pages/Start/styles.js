@@ -6,10 +6,7 @@ export const StartLayout = styled.div`
   background-color: #242321;
   color: white;
   position: relative;
-
-  span {
-  }
-
+  
   .star1,
   .star2,
   .star3,
