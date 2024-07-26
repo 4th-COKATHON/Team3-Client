@@ -2,6 +2,7 @@ import film from "./../../assets/ShowDate/Film.svg";
 import star1 from "./../../assets/ShowDate/Star1.svg";
 import star2 from "./../../assets/ShowDate/Star2.svg";
 import star3 from "./../../assets/ShowDate/Star3.svg";
+import newjeans4 from "./../../assets/ShowDate/newjeans4.avif";
 import {
   DateBox,
   ImgCard,
@@ -24,7 +25,9 @@ const ShowDate = () => {
           <span>2024년 7월 27일</span>
         </DateBox>
         <ImgWrapper>
-          <ImgCard></ImgCard>
+          <ImgCard>
+            <img src={newjeans4} alt="newjeans4" />
+          </ImgCard>
           <ImgCard></ImgCard>
           <ImgCard></ImgCard>
           <ImgCard></ImgCard>

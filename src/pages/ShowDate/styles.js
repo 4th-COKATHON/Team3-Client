@@ -90,4 +90,11 @@ export const ImgCard = styled.div`
   border-radius: 28px;
   background-color: #cdcdcd;
   min-width: 390px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 28px;
+  }
 `;
