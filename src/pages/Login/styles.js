@@ -30,4 +30,6 @@ export const LoginButton = styled.div`
   font-weight: 400px;
   border: 1px solid #eeedec;
   font-family: "PT-Medium";
+cursor: pointer;
+
 `;
